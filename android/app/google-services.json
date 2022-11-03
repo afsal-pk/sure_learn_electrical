@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "293196166131",
+    "project_id": "sure-learn-electrical",
+    "storage_bucket": "sure-learn-electrical.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:293196166131:android:7958ce1e3a572035251886",
+        "android_client_info": {
+          "package_name": "com.example.sure_learn_electrical"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "293196166131-18fs72jb6iqea5mgs7qrohbn4uj4k6bm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArpIN2XSyxziwedBdD4mfBAMr_MBbH3-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "293196166131-18fs72jb6iqea5mgs7qrohbn4uj4k6bm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
