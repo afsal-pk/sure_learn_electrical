@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppCircleButton extends StatelessWidget {
-  AppCircleButton(
+  const AppCircleButton(
       {super.key,
       required this.child,
       this.color,
@@ -16,8 +16,11 @@ class AppCircleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      shape: CircleBorder(),
+      type: MaterialType.transparency,
+      clipBehavior: Clip.hardEdge,
+      shape: const CircleBorder(),
       child: InkWell(
+        onTap: onTap,
         child: child,
       ),
     );
