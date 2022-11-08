@@ -2,9 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sure_learn_electrical/bindings/initial_binding.dart';
-
 import 'package:sure_learn_electrical/controllers/theme_controller.dart';
-import 'package:sure_learn_electrical/data_uploader_screen.dart';
 import 'package:sure_learn_electrical/firebase_options.dart';
 import 'package:sure_learn_electrical/routes/app_routes.dart';
 
@@ -17,7 +15,7 @@ Future<void> main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
 //   InitialBindings().dependencies();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

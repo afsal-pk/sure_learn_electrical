@@ -1,4 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:sure_learn_electrical/controllers/auth_controller.dart';
 import 'package:sure_learn_electrical/controllers/theme_controller.dart';
