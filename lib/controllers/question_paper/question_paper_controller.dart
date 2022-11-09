@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
+import 'package:sure_learn_electrical/controllers/auth_controller.dart';
 import 'package:sure_learn_electrical/firebase_ref/references.dart';
 import 'package:sure_learn_electrical/models/question_paper_model.dart';
 import 'package:sure_learn_electrical/services/firebase_storage_service.dart';
+import 'package:sure_learn_electrical/utils/app_logger.dart';
 
 class QuestionPaperController extends GetxController {
   final allPaperImages = <String>[].obs;
@@ -34,7 +36,22 @@ class QuestionPaperController extends GetxController {
       }
       allPapers.assignAll(paperList);
     } catch (e) {
-      print(e);
+      AppLogger.e(e);
+    }
+  }
+
+  void navigateToQuestions(
+      {required QuestionPaperModel paper, bool tryAgain = false}) {
+    AuthController _authController = Get.find();
+
+    if (_authController.isLoggedIn()) {
+      if (tryAgain) {
+        Get.back();
+      } else {
+        //Get.toNamed
+      }
+    } else {
+      _authController.showLoginAlertDialogue();
     }
   }
 }
