@@ -1,9 +1,11 @@
 import 'package:get/get.dart';
 import 'package:sure_learn_electrical/controllers/question_paper/question_paper_controller.dart';
+import 'package:sure_learn_electrical/controllers/question_paper/questions_ontroller.dart';
 import 'package:sure_learn_electrical/controllers/zoom_drawer_controller.dart';
 import 'package:sure_learn_electrical/screens/home/home_screen.dart';
 import 'package:sure_learn_electrical/screens/introduction/introduction.dart';
 import 'package:sure_learn_electrical/screens/login/login_screen.dart';
+import 'package:sure_learn_electrical/screens/question/question_screen.dart';
 
 import '../screens/splash/splash_screen.dart';
 
@@ -28,5 +30,13 @@ class AppRoutes {
           name: LoginScreen.routName,
           page: (() => LoginScreen()),
         ),
+        GetPage(
+            name: QuestionsScreen.routeName,
+            page: (() => QuestionsScreen()),
+            binding: BindingsBuilder(
+              () {
+                Get.put(QuestionsController());
+              },
+            )),
       ];
 }

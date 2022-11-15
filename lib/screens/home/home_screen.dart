@@ -17,6 +17,8 @@ import 'package:sure_learn_electrical/widgets/content_area.dart';
 class HomeScreen extends GetView<MyZoomDrawerController> {
   const HomeScreen({super.key});
 
+  static const String routeName = "/home";
+
   @override
   Widget build(BuildContext context) {
     // ignore: no_leading_underscores_for_local_identifiers

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:sure_learn_electrical/controllers/auth_controller.dart';
 import 'package:sure_learn_electrical/firebase_ref/references.dart';
 import 'package:sure_learn_electrical/models/question_paper_model.dart';
+import 'package:sure_learn_electrical/screens/question/question_screen.dart';
 import 'package:sure_learn_electrical/services/firebase_storage_service.dart';
 import 'package:sure_learn_electrical/utils/app_logger.dart';
 
@@ -48,7 +49,7 @@ class QuestionPaperController extends GetxController {
       if (tryAgain) {
         Get.back();
       } else {
-        //Get.toNamed
+        Get.toNamed(QuestionsScreen.routeName, arguments: paper);
       }
     } else {
       _authController.showLoginAlertDialogue();
