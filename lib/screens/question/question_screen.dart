@@ -3,14 +3,16 @@ import 'package:get/get.dart';
 import 'package:sure_learn_electrical/configs/themes/app_colors.dart';
 import 'package:sure_learn_electrical/configs/themes/custom_text_style.dart';
 import 'package:sure_learn_electrical/configs/themes/ui_parameters.dart';
-import 'package:sure_learn_electrical/controllers/question_paper/questions_ontroller.dart';
+import 'package:sure_learn_electrical/controllers/question_paper/questions_controller.dart';
 import 'package:sure_learn_electrical/firebase_ref/loading_status.dart';
+import 'package:sure_learn_electrical/screens/question/test_overview_screen.dart';
 import 'package:sure_learn_electrical/widgets/common/background_decoration.dart';
 import 'package:sure_learn_electrical/widgets/common/custom_app_bar.dart';
 import 'package:sure_learn_electrical/widgets/common/main_button.dart';
 import 'package:sure_learn_electrical/widgets/common/question_place_holder.dart';
 import 'package:sure_learn_electrical/widgets/content_area.dart';
 import 'package:sure_learn_electrical/widgets/questions/answer_card.dart';
+import 'package:sure_learn_electrical/widgets/questions/countdown_timer.dart';
 
 class QuestionsScreen extends GetView<QuestionsController> {
   const QuestionsScreen({super.key});
@@ -24,10 +26,15 @@ class QuestionsScreen extends GetView<QuestionsController> {
       appBar: CustomAppBar(
           leading: Container(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-            child: const Text("Tmer"),
-            decoration: ShapeDecoration(
+            decoration: const ShapeDecoration(
                 shape: StadiumBorder(
                     side: BorderSide(color: onSurfaceTextColor, width: 2))),
+            child: Obx(
+              () => CoutdownTimer(
+                time: controller.time.value,
+                color: onSurfaceTextColor,
+              ),
+            ),
           ),
           showActionIcon: true,
           titleWidget: Obx(
@@ -121,7 +128,7 @@ class QuestionsScreen extends GetView<QuestionsController> {
                       child: MainButton(
                         onTap: () {
                           controller.isLastQuestion
-                              ? Container()
+                              ? Get.toNamed(TestOverviewScreen.routeName)
                               : controller.nextQuestion();
                         },
                         title: controller.isLastQuestion ? 'Submit' : 'Next',

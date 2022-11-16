@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sure_learn_electrical/configs/themes/app_icons.dart';
 import 'package:sure_learn_electrical/configs/themes/custom_text_style.dart';
 import 'package:sure_learn_electrical/configs/themes/ui_parameters.dart';
+import 'package:sure_learn_electrical/screens/question/test_overview_screen.dart';
 import 'package:sure_learn_electrical/widgets/app_circle_button.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -53,8 +55,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 Transform.translate(
                   offset: const Offset(10, 0),
                   child: AppCircleButton(
-                    child: const Icon(AppIcons.menuLeft),
-                    onTap: onMenuActionTap ?? null,
+                    onTap: onMenuActionTap ??
+                        () => Get.toNamed(TestOverviewScreen.routeName),
+                    child: const Icon(AppIcons.menu),
                   ),
                 ),
             ],

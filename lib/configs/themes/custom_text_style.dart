@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sure_learn_electrical/configs/themes/app_colors.dart';
 import 'package:sure_learn_electrical/configs/themes/ui_parameters.dart';
 
@@ -18,3 +19,9 @@ const headerText = TextStyle(
 
 const appBarTS = TextStyle(
     fontWeight: FontWeight.bold, fontSize: 16, color: onSurfaceTextColor);
+
+TextStyle countdownTimerTs() => TextStyle(
+    letterSpacing: 2,
+    color: UIParameters.isDarkMode()
+        ? Theme.of(Get.context!).textTheme.bodyText1!.color
+        : Theme.of(Get.context!).primaryColor);
